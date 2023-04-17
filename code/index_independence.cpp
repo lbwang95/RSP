@@ -582,12 +582,44 @@ int main(int argc , char * argv[]){
     
     t1=std::chrono::high_resolution_clock::now();
     //FILE *fp = fopen("index", "w");
-    //save(string("../data/") + sfile + string("/"));
+    save(string("../data/") + sfile + string("/"));
     t2=std::chrono::high_resolution_clock::now();
     time_span = std::chrono::duration_cast<std::chrono::duration<double>>(t2-t1);
 	runT= time_span.count();
 	cout<<"Saving Time "<<runT<<endl;
     cout << "Index Size " << (double)indexsize * 4 / 1000000 << "MB" << endl;
+	
+	if (argc > 3){
+        hopsize = npathConcat = 0;
+        string s3 = prefix + string(argv[4]);
+        fp_query = fopen(s3.c_str(), "r");
+        vector<pair<II, double>> queryset;
+        int qs, qt;
+        double qC;
+        while (~fscanf(fp_query, "%d%d%lf", &qs, &qt, &qC)){
+            queryset.push_back(make_pair(II(qs, qt), qC));
+        }
+
+        vector<double> ans;
+        t1=std::chrono::high_resolution_clock::now();
+        for (int i = 0; i < queryset.size(); i++){
+            NRPQuery(queryset[i].first.first, queryset[i].first.second, queryset[i].second);
+            ans.push_back(optw);
+        }
+        t2=std::chrono::high_resolution_clock::now();
+
+        FILE *fp_ans1 = fopen((s3 + string("RSPans")).c_str(), "w");
+        for (int i = 0; i < ans.size();i++)
+            fprintf(fp_ans1, "%f\n", ans[i]);
+        fclose(fp_ans1);
+
+        time_span = std::chrono::duration_cast<std::chrono::duration<double>>(t2 - t1);
+        runT= time_span.count();
+        cout<<"Query Time "<<runT<<endl;
+        cout << "# of Hoplinks " << hopsize <<endl;
+        cout << "# of Path Concatenations " << npathConcat <<endl;
+        return 0;
+    }
 
     freopen((prefix + string("Results_ind")).c_str(), "w", stdout);
     for (int i = 0; i < 5;i++){

@@ -237,6 +237,29 @@ int main(int argc , char * argv[]){
 	std::chrono::duration<double> time_span;
 	double runT;
     
+	if (argc > 4){
+        string s3 = prefix + string(argv[4]);
+        fp_query = fopen(s3.c_str(), "r");
+        vector<pair<II, double>> queryset;
+        int qs, qt;
+        double qC;
+        while (~fscanf(fp_query, "%d%d%lf", &qs, &qt, &qC)){
+            queryset.push_back(make_pair(II(qs, qt), qC));
+        }
+
+        vector<double> ans;
+        t1=std::chrono::high_resolution_clock::now();
+        for (int i = 0; i < queryset.size(); i++){
+            ERSPQuery(queryset[i].first.first, queryset[i].first.second, queryset[i].second);
+            ans.push_back(optw);
+        }
+        t2=std::chrono::high_resolution_clock::now();
+
+        time_span = std::chrono::duration_cast<std::chrono::duration<double>>(t2 - t1);
+        runT= time_span.count();
+        cout<<"Query Time "<<runT<<endl;
+        return 0;
+    }
 
 
     freopen((prefix + sfile+sq+st+string("SDRSPResults")).c_str(), "w", stdout);

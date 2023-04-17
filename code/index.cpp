@@ -830,10 +830,10 @@ int main(int argc , char * argv[]){
     setres += string("Saving Time ") + to_string(runT) + string("\n");
     setres += string("Index Size ") + to_string((double)indexsize * 4 / 1000000) + string("MB\n");   
 
-/*
-    if (argc > 2){
+
+    if (argc > 4){
         hopsize = npathConcat = 0;
-        string s3 = prefix + sq;
+        string s3 = prefix + string(argv[4]);
         fp_query = fopen(s3.c_str(), "r");
         vector<pair<II, double>> queryset;
         int qs, qt;
@@ -862,8 +862,6 @@ int main(int argc , char * argv[]){
         cout << "# of Path Concatenations " << npathConcat <<endl;
         return 0;
     }
-    NRPQuery(100, 401, 0.9);
-    //return 0;*/
     
     freopen((prefix + string("NRPResults")).c_str(), "a", stdout);
     printf("%s\n", setres.c_str());
