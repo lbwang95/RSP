@@ -1,5 +1,5 @@
 # Efficiently Answering Reliable Shortest Path Queries in Stochastic Road Networks
-This repository contains the source codes and data for this paper. 
+This repository contains the source code and data for this paper. 
 
 Usage
 ---------------
@@ -32,7 +32,7 @@ In the folder code/,
 
 ./IndIndex [network name] [variance file id] [query file name]
 
-A sample run is ./index NY 3 3, where the program will run all the 10 query files if the last parameter is not specified. The network name could be NY, BAY, or COL. The variance file id can be "1"-"5" as explained in the data description. The covariance id can be "1"-"5" or "K1"-"K4". The query file name can be "dis1"-"dis5" and "alpha1"-"alpha5". The output of the screen will show many auxiliary details, including the index time and memory costs. The results of the query time, the number of hoplinks and path concatenations, will be put in the file with the suffix "Results" in the folder "data/[network name]". The query answers will be in the file named with the suffix "ans".
+A sample run is ./index NY 3 3, where the program will run the 10 query files (as explained in the data description) if the last parameter is not specified. The network name could be NY, BAY, or COL. The variance file id can be "1"-"5". The covariance id can be "1"-"5" or "K1"-"K4". The query file name can be "dis1"-"dis5" and "alpha1"-"alpha5". The output of the screen will show many auxiliary details, including the index time and memory costs. The results of the query time, the number of hoplinks and path concatenations, will be put in the file with the suffix "Results" in the folder "data/[network name]". The query answers will be in the file named with the suffix "ans".
 
 ### Data Description
 
@@ -42,6 +42,6 @@ In the folder of each network, the files with suffixes "USA-road-t.[network name
 
 There are also 10 query set files named "dis1"-"dis5" and "alpha1"-"alpha5" corresponding to those stated in the paper. Each query set file contains 1000 lines. Each line contains three values of a CSP query which are s, t, and $\alpha$.
 
-The files with their prefixes "mu" and "sigma" are for the experiments of changing the mean and variance during index maintenance. Each line contains a three values representing the edge id, the multiplier for the mean, and the multiplier for the variance.
+The files with their prefixes "mu" and "sigma" are for the experiments of changing the mean and variance during index maintenance. Each line contains three values representing the edge id, the multiplier for the mean, and the multiplier for the variance.
 
 The file named "order.txt" is used to build the tree decomposition. One can also generate it by using the function "genorder()" in the index.cpp.
