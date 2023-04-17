@@ -316,7 +316,7 @@ int main(int argc , char * argv[]){
         t2=std::chrono::high_resolution_clock::now();
         time_span = std::chrono::duration_cast<std::chrono::duration<double>>(t2-t1);
         runT= time_span.count();
-        cout<<"Query Time "<<runT<<endl;
+        cout<<"Query Time "<<runT/100<<endl;
     }
     printf("\n\n");
     for (int qi = 0; qi < 5;qi++){
@@ -334,6 +334,6 @@ int main(int argc , char * argv[]){
         t2=std::chrono::high_resolution_clock::now();
         time_span = std::chrono::duration_cast<std::chrono::duration<double>>(t2-t1);
         runT= time_span.count();
-        cout<<"Query Time "<<runT<<endl;
+        cout<<"Query Time "<<runT/100<<endl;
     }
 }

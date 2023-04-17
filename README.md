@@ -32,7 +32,7 @@ In the folder code/,
 
 ./IndIndex [network name] [variance file id] [query file name]
 
-A sample run is ./index NY 3 3, where the program will build the NRP index and run all the 10 query files (as explained in the paper) if the last parameter (query file name) is not specified. The network name can be NY, BAY, or COL. The variance file id can be "1"-"5". The covariance id can be "1"-"5" or "K1"-"K4". The query file name can be "dis1"-"dis5" and "alpha1"-"alpha5". Their details are explained in the data description. The output of the screen will show intermediate details, including the tree time, the total time, and memory costs. The results of the query time, the number of hoplinks and path concatenations, will be written in the file with the suffix "Results" in the folder "data/[network name]". The query answers will be in the file named with the suffix "ans" in the folder "data/[network name]".
+A sample run is ./index NY 3 3, where the program will build the NRP index and run all the 10 query files (as explained in the paper) if the last parameter (query file name) is not specified. The network name can be NY, BAY, or COL. The variance file id can be "1"-"5". The covariance id can be "1"-"5" or "K1"-"K4". The query file name can be "dis1"-"dis5" and "alpha1"-"alpha5". Their details are explained in the data description. The output of the screen will show intermediate details, including the tree time, the total time, and memory costs. The results of the query time (in seconds), the number of hoplinks and path concatenations, will be written in the file with the suffix "Results" in the folder "data/[network name]". The query answers will be in the file named with the suffix "ans" in the folder "data/[network name]".
 
 ### Data Description
 
