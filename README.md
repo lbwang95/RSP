@@ -45,3 +45,12 @@ There are also 10 query set files named "dis1"-"dis5" and "alpha1"-"alpha5" corr
 The files with their prefixes "mu" and "sigma" are for the experiments of changing the mean and variance during index maintenance. Each line contains three values representing the edge id, the multiplier for the mean, and the multiplier for the variance.
 
 The file named "order.txt" is used to build the tree decomposition. One can also generate it by using the function "genorder()" in the index.cpp.
+
+### Running Example
+
+We have also made a toy example (the same as the running example in the paper) with related data (using the same format stated above) stored in the folder data/exa.  In the folder code/, a sample run is 
+
+./index exa 1 1 query
+
+The query is specified in the file named "query". The final answer will be shown in the file named "queryRSPans", which corresponds to the correlated case. We can run the independent case by removing all the lines in 1USA-road-cov.exa.gr or setting the covariance to 0. 
+
