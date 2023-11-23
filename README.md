@@ -1,4 +1,4 @@
-# Efficiently Answering Reliable Shortest Path Queries in Stochastic Road Networks
+# NRP: A Fast Index for Reliable Shortest Path Queries in Stochastic Road Networks
 This repository contains the source code and data for this paper. 
 
 Usage
