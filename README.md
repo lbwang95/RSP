@@ -22,6 +22,8 @@ In the folder code/,
 
 ./index [network name] [variance file id] [covariance file id] [query file name]
 
+./TBS [network name] [variance file id] [covariance file id] [query file name]
+
 ./ERSP [network name] [variance file id] [covariance file id] [query file name]
 
 ./SDRSP [network name] [variance file id] [covariance file id] [query file name]
