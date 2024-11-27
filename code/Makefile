@@ -4,9 +4,15 @@ LIBS = -lrt
 CFLAGS = --std=c++11 -W -Wall -Wno-sign-compare -O3 -s -pipe -mmmx -msse -msse2 -msse3 -mcmodel=large
 TARGET = ./all
 
-all: index ERSP SDRSP SMOGA Maintenance IndIndex
+all: index index_PR TBS ERSP SDRSP SMOGA Maintenance
 index: index.cpp cdfppf.h
 	$(CXX) $(CFLAGS) -o index index.cpp cdfppf.h
+
+index_PR: index_PR.cpp cdfppf.h
+	$(CXX) $(CFLAGS) -o index_PR index_PR.cpp cdfppf.h
+	
+TBS: TBS.cpp cdfppf.h
+	$(CXX) $(CFLAGS) -o TBS TBS.cpp cdfppf.h
 
 ERSP: ERSP-Astar.cpp cdfppf.h
 	$(CXX) $(CFLAGS) -o ERSP ERSP-Astar.cpp cdfppf.h
@@ -19,9 +25,6 @@ SMOGA: SMOGA.cpp cdfppf.h
 	
 Maintenance: index_maintenance.cpp cdfppf.h
 	$(CXX) $(CFLAGS) -o Maintenance index_maintenance.cpp cdfppf.h
-
-IndIndex: index_independence.cpp cdfppf.h
-	$(CXX) $(CFLAGS) -o IndIndex index_independence.cpp cdfppf.h
 
 .PHONY: clean
 clean:
