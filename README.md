@@ -48,7 +48,7 @@ The files with their prefixes "mu" and "sigma" are for the experiments of changi
 
 The file named "order.txt" is used to build the tree decomposition. One can also generate it by using the function "genorder()" in the index.cpp.
 
-We also extracted real travel time distributions from NYC Department of Transportation (\url{https://data.cityofnewyork.us/Transportation/DOT-Traffic-Speeds-NBE/i4gi-tjb9}). The two files with prefixes "DOT-" in the "data/NY" folder include the means and variances of edges. We could replace them with USA-road-t.NY.gr and USA-road-var.NY.gr to run the experiments.
+We also extracted real travel time distributions from NYC Department of Transportation (link: https://data.cityofnewyork.us/Transportation/DOT-Traffic-Speeds-NBE/i4gi-tjb9). The two files with prefixes "DOT-" in the "data/NY" folder include the means and variances of edges. We could replace them with USA-road-t.NY.gr and USA-road-var.NY.gr to run the experiments.
 
 ### Running Example
 
